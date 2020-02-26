@@ -2,10 +2,12 @@ package id.ac.polinema.intentexercise;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -51,5 +53,10 @@ public class ProfileActivity extends AppCompatActivity {
 
             imgProfile.setImageBitmap(bitmap);
         }
+    }
+
+    public void btn_visitHomepage(View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://" + tvHomepage.getText().toString()));
+        startActivity(intent);
     }
 }
