@@ -18,7 +18,7 @@ public class ProfileActivity extends AppCompatActivity {
     private TextView tvAbout, tvName, tvEmail, tvHomepage;
     private ImageView imgProfile;
     private Bitmap bitmap;
-    Uri imageUri;
+    private Uri imageUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,7 @@ public class ProfileActivity extends AppCompatActivity {
             tvEmail.setText(user.getEmail());
             tvAbout.setText(user.getAbout());
             tvHomepage.setText(user.getHomepage());
+            imageUri = user.getImageUri();
 
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
